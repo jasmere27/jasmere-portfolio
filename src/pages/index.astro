@@ -15,13 +15,13 @@ const ext = { target: '_blank', rel: 'noopener noreferrer' };
 const year = new Date().getFullYear();
 ---
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{seo.title}</title>
   <meta name="description" content={seo.description} />
-  <meta name="theme-color" content="#F9F9F8" />
+  <meta name="theme-color" content="#0F172A" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   {Astro.site && <link rel="canonical" href={Astro.site.href} />}
   <meta property="og:type" content="website" />
@@ -41,7 +41,7 @@ const year = new Date().getFullYear();
     (function () {
       var d = document.documentElement;
       d.classList.add('js');
-      try { var t = localStorage.getItem('theme-pref'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+      try { var t = localStorage.getItem('theme-v3'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
     })();
   </script>
 </head>
@@ -235,14 +235,14 @@ const year = new Date().getFullYear();
     const root = document.documentElement;
     const themeBtn = document.getElementById('theme-toggle')!;
     const syncTheme = () => {
-      const dark = root.dataset.theme === 'dark';
+      const dark = root.dataset.theme !== 'light';
       themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-      document.querySelector('meta[name="theme-color"]')!.setAttribute('content', dark ? '#0B1120' : '#F9F9F8');
+      document.querySelector('meta[name="theme-color"]')!.setAttribute('content', dark ? '#0F172A' : '#F9F9F8');
     };
     syncTheme();
     themeBtn.addEventListener('click', () => {
-      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-      try { localStorage.setItem('theme-pref', root.dataset.theme); } catch {}
+      root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+      try { localStorage.setItem('theme-v3', root.dataset.theme); } catch {}
       syncTheme();
     });
 
