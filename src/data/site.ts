@@ -5,6 +5,8 @@ import reviewflowImg from '../assets/projects/reviewflow.png';
 import receptionistImg from '../assets/projects/receptionist.png';
 import webinaboxImg from '../assets/projects/webinabox.png';
 import leadflowImg from '../assets/projects/leadflow.png';
+import invoiceflowImg from '../assets/projects/invoiceflow.png';
+import followupImg from '../assets/projects/followup.png';
 
 export const person = {
   name: 'Jasmere Paul Calagui',
@@ -95,6 +97,24 @@ export const projects = [
     image: leadflowImg,
     alt: 'Demo dental clinic website with service prices and a chat assistant prompt for capturing enquiries',
   },
+  {
+    name: 'InvoiceFlow AI',
+    url: 'https://invoiceflow-ai.netlify.app',
+    description:
+      'Invoicing app for freelancers and small businesses with a revenue dashboard, payment tracking, print-ready PDF invoices, and AI-written line items and payment reminders.',
+    tags: ['JavaScript', 'Node.js', 'Invoicing'],
+    image: invoiceflowImg,
+    alt: 'InvoiceFlow AI dashboard with revenue, paid and pending totals, a six-month revenue chart and recent invoices',
+  },
+  {
+    name: 'FollowUp AI',
+    url: 'https://followup-ai-jealabs.netlify.app',
+    description:
+      'Lead follow-up tracker with a pipeline dashboard, a daily list of who to contact, and AI-drafted email, SMS and call scripts for each lead.',
+    tags: ['React', 'TypeScript', 'Sales', 'Automation'],
+    image: followupImg,
+    alt: 'FollowUp AI dashboard showing follow-ups due today, open pipeline value and an AI-drafted follow-up email for a lead',
+  },
 ];
 
 export const experience = [
@@ -114,7 +134,7 @@ export const experience = [
     date: '2025 — Present',
     points: [
       'Took VeriFact from capstone to a live product: Spring Boot and Spring AI backend, React frontend, Postgres, deployed on Cloudflare Pages and Render.',
-      'Built and shipped five business products (quoting, reviews, booking, hotel and lead capture) as live demos and digital products.',
+      'Built and shipped seven business products (quoting, invoicing, reviews, booking, hotel, lead capture and follow-ups) as live demos and digital products.',
     ],
   },
   {
