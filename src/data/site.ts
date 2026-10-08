@@ -50,7 +50,7 @@ export const featured = {
   note: 'Started as my IT capstone and rebuilt as a live product. It is an aid for checking information, not a final authority.',
   tags: ['Java', 'Spring Boot', 'Spring AI', 'React', 'PostgreSQL', 'LLM + Web Search'],
   image: verifactImg,
-  alt: 'VeriFact check page with text, image and audio input tabs, next to an example report marking the claim "The Eiffel Tower is located in Rome" as Contradicted with a reference source and a fact-checker source',
+  alt: 'VeriFact homepage with an example report marking a claim as Contradicted with its sources, beside the VeriFact check page on a phone',
 };
 
 export const projects = [
@@ -61,7 +61,7 @@ export const projects = [
       'Customer support helpdesk with an inbox, tickets, customers, a knowledge base and analytics, using Claude to draft replies, summarize tickets and suggest category, priority and tags.',
     tags: ['JavaScript', 'Node.js', 'Claude API', 'Helpdesk'],
     image: supportdeskImg,
-    alt: 'SupportDesk AI inbox with a ticket list and an open ticket showing an AI summary with customer mood and suggested next steps',
+    alt: 'SupportDesk AI inbox with an AI ticket summary on desktop, beside the helpdesk dashboard on a phone',
   },
   {
     name: 'AI Receptionist',
@@ -70,7 +70,7 @@ export const projects = [
       'Business website with a chat receptionist that answers from business data and offers open time slots, a five-step booking flow and an admin dashboard.',
     tags: ['Astro', 'TypeScript', 'Booking', 'Chat assistant'],
     image: receptionistImg,
-    alt: 'Demo dental clinic website with the Luma AI chat assistant answering a pricing question and offering open appointment times',
+    alt: 'AI Receptionist demo dental clinic site with the Luma AI chat offering open appointment times, beside the mobile site on a phone',
   },
   {
     name: 'QuoteFlow AI',
@@ -79,7 +79,7 @@ export const projects = [
       'Quotation tool that turns a plain-language customer request into a line-item quote, with a quote pipeline dashboard and print-ready PDF output.',
     tags: ['React', 'TypeScript', 'Business software'],
     image: quoteflowImg,
-    alt: 'QuoteFlow AI new-quote screen with the AI assistant turning a customer request into suggested services and line items, and a running quote total',
+    alt: 'QuoteFlow AI new-quote screen with the AI assistant drafting line items, beside the quote dashboard on a phone',
   },
   {
     name: 'InvoiceFlow AI',
@@ -88,7 +88,7 @@ export const projects = [
       'Invoicing app for freelancers and small businesses with a revenue dashboard, payment tracking, print-ready PDF invoices, and AI-written line items and payment reminders.',
     tags: ['JavaScript', 'Node.js', 'Invoicing'],
     image: invoiceflowImg,
-    alt: 'InvoiceFlow AI dashboard with revenue, paid, pending and overdue totals, a monthly revenue chart and invoice status breakdown',
+    alt: 'InvoiceFlow AI revenue dashboard with totals, a monthly chart and invoice status, on desktop and on a phone',
   },
   {
     name: 'LeadFlow AI',
@@ -97,7 +97,7 @@ export const projects = [
       'Lead capture assistant that collects contact details, tags each enquiry by intent and drafts follow-up email and SMS messages for a lead dashboard.',
     tags: ['Astro', 'TypeScript', 'Lead capture', 'Automation'],
     image: leadflowImg,
-    alt: 'LeadFlow AI lead dashboard with a lead detail panel showing an AI summary, contact details and buttons to generate a follow-up email or SMS',
+    alt: 'LeadFlow AI lead dashboard with an AI summary and follow-up buttons, beside the demo clinic site with its lead capture chat on a phone',
   },
   {
     name: 'ReviewFlow AI',
@@ -106,7 +106,7 @@ export const projects = [
       'Review management dashboard with rating trends, sentiment breakdown, drafted replies to customer reviews and review-request messages.',
     tags: ['React', 'TypeScript', 'Reputation'],
     image: reviewflowImg,
-    alt: 'ReviewFlow AI dashboard with average rating, review counts, a six-month rating trend chart and a sentiment breakdown',
+    alt: 'ReviewFlow AI dashboard with average rating, rating trend and sentiment breakdown, on desktop and on a phone',
   },
   {
     name: 'WebInABox',
@@ -115,7 +115,7 @@ export const projects = [
       'Hotel website template with a working demo booking flow covering availability, pricing, taxes and guest details, plus a demo admin dashboard.',
     tags: ['Astro', 'TypeScript', 'Hospitality'],
     image: webinaboxImg,
-    alt: 'Demo seaside hotel website with an illustrated hero and a check-in, check-out and guests search bar',
+    alt: 'WebInABox demo hotel booking page with dates, guests and room choices, beside the hotel homepage on a phone',
   },
   {
     name: 'FollowUp AI',
@@ -124,7 +124,7 @@ export const projects = [
       'Lead follow-up tracker with a pipeline dashboard, a daily list of who to contact, and AI-drafted email, SMS and call scripts for each lead.',
     tags: ['React', 'TypeScript', 'Sales', 'Automation'],
     image: followupImg,
-    alt: 'FollowUp AI leads list with a lead drawer showing deal details and an AI-drafted follow-up email',
+    alt: 'FollowUp AI leads list with an AI-drafted follow-up email on desktop, beside the follow-up dashboard on a phone',
   },
 ];
 
