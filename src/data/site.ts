@@ -31,7 +31,7 @@ export const links = {
   // Add your LinkedIn profile URL here to show it in the contact section.
   linkedin: '',
   youtube: 'https://www.youtube.com/@JeaAILabs',
-  tiktok: 'https://www.tiktok.com/@verifact917',
+  tiktok: 'https://www.tiktok.com/@aijealabs',
 };
 
 export const featured = {
@@ -188,7 +188,7 @@ export const channels = [
   },
   {
     platform: 'TikTok',
-    handle: '@verifact917',
+    handle: '@aijealabs',
     description: 'Short-form AI and software content and product demos',
     url: links.tiktok,
     cta: 'Visit TikTok',
