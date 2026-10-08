@@ -1,4 +1,21 @@
 :root,
+:root[data-theme='light'] {
+  --bg: #f9f9f8;
+  --surface: #efefef;
+  --surface-2: #e8e8e6;
+  --text: #1a1a1a;
+  --muted: #5c5c5c;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --on-accent: #ffffff;
+  --border: #e2e2df;
+  --border-strong: #c9c9c5;
+  --tag-bg: rgba(37, 99, 235, 0.08);
+  --tag-text: #1d4ed8;
+  --shadow: 0 20px 40px -28px rgba(26, 26, 26, 0.22);
+  color-scheme: light;
+}
+
 :root[data-theme='dark'] {
   --bg: #0b1120;
   --surface: #111827;
@@ -14,23 +31,6 @@
   --tag-text: #7dd3fc;
   --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 20px 40px -24px rgba(0, 0, 0, 0.6);
   color-scheme: dark;
-}
-
-:root[data-theme='light'] {
-  --bg: #ffffff;
-  --surface: #f8fafc;
-  --surface-2: #f1f5f9;
-  --text: #0f172a;
-  --muted: #475569;
-  --accent: #0284c7;
-  --accent-hover: #0369a1;
-  --on-accent: #ffffff;
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --tag-bg: #f0f9ff;
-  --tag-text: #0369a1;
-  --shadow: 0 20px 40px -28px rgba(15, 23, 42, 0.25);
-  color-scheme: light;
 }
 
 *,
@@ -123,8 +123,8 @@ a:hover .card__cta .arrow,
 }
 .icon-btn:hover { border-color: var(--border-strong); }
 .icon-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-:root[data-theme='light'] .i-moon,
-:root:not([data-theme='light']) .i-sun { display: none; }
+:root:not([data-theme='dark']) .i-moon,
+:root[data-theme='dark'] .i-sun { display: none; }
 
 /* Navigation */
 .nav {
