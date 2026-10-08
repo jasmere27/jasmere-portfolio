@@ -1,12 +1,14 @@
 // All portfolio content lives here. Edit this file to update the site.
-import verifactImg from '../assets/projects/verifact.png';
-import quoteflowImg from '../assets/projects/quoteflow.png';
-import reviewflowImg from '../assets/projects/reviewflow.png';
-import receptionistImg from '../assets/projects/receptionist.png';
-import webinaboxImg from '../assets/projects/webinabox.png';
-import leadflowImg from '../assets/projects/leadflow.png';
-import invoiceflowImg from '../assets/projects/invoiceflow.png';
-import followupImg from '../assets/projects/followup.png';
+// Portfolio thumbnails (real product UI). Gumroad covers live separately in /covers.
+import verifactImg from '../assets/thumbnails/verifact.webp';
+import supportdeskImg from '../assets/thumbnails/supportdesk.webp';
+import receptionistImg from '../assets/thumbnails/ai-receptionist.webp';
+import quoteflowImg from '../assets/thumbnails/quoteflow.webp';
+import invoiceflowImg from '../assets/thumbnails/invoiceflow.webp';
+import leadflowImg from '../assets/thumbnails/leadflow.webp';
+import reviewflowImg from '../assets/thumbnails/reviewflow.webp';
+import webinaboxImg from '../assets/thumbnails/webinabox.webp';
+import followupImg from '../assets/thumbnails/followup.webp';
 
 export const person = {
   name: 'Jasmere Paul Calagui',
@@ -48,27 +50,18 @@ export const featured = {
   note: 'Started as my IT capstone and rebuilt as a live product. It is an aid for checking information, not a final authority.',
   tags: ['Java', 'Spring Boot', 'Spring AI', 'React', 'PostgreSQL', 'LLM + Web Search'],
   image: verifactImg,
-  alt: 'VeriFact fact-checker interface with a text box to paste a post, claim or link, tabs for image and audio input, and example claims to check',
+  alt: 'VeriFact check page with text, image and audio input tabs, next to an example report marking the claim "The Eiffel Tower is located in Rome" as Contradicted with a reference source and a fact-checker source',
 };
 
 export const projects = [
   {
-    name: 'QuoteFlow AI',
-    url: 'https://quoteflow-ai-jealabs.netlify.app',
+    name: 'SupportDesk AI',
+    url: 'https://supportdesk-ai-app.netlify.app',
     description:
-      'Quotation tool that turns a plain-language customer request into a line-item quote, with a quote pipeline dashboard and print-ready PDF output.',
-    tags: ['React', 'TypeScript', 'Business software'],
-    image: quoteflowImg,
-    alt: 'QuoteFlow AI dashboard showing quote totals by status, recent quotes and a pipeline breakdown',
-  },
-  {
-    name: 'ReviewFlow AI',
-    url: 'https://reviewflow-ai-jealabs.netlify.app',
-    description:
-      'Review management dashboard with rating trends, sentiment breakdown, drafted replies to customer reviews and review-request messages.',
-    tags: ['React', 'TypeScript', 'Reputation'],
-    image: reviewflowImg,
-    alt: 'ReviewFlow AI dashboard with average rating, a six-month rating trend chart and a sentiment breakdown',
+      'Customer support helpdesk with an inbox, tickets, customers, a knowledge base and analytics, using Claude to draft replies, summarize tickets and suggest category, priority and tags.',
+    tags: ['JavaScript', 'Node.js', 'Claude API', 'Helpdesk'],
+    image: supportdeskImg,
+    alt: 'SupportDesk AI inbox with a ticket list and an open ticket showing an AI summary with customer mood and suggested next steps',
   },
   {
     name: 'AI Receptionist',
@@ -77,7 +70,43 @@ export const projects = [
       'Business website with a chat receptionist that answers from business data and offers open time slots, a five-step booking flow and an admin dashboard.',
     tags: ['Astro', 'TypeScript', 'Booking', 'Chat assistant'],
     image: receptionistImg,
-    alt: 'Demo dental clinic website with an Ask Luma AI chat assistant and the next available appointment time',
+    alt: 'Demo dental clinic website with the Luma AI chat assistant answering a pricing question and offering open appointment times',
+  },
+  {
+    name: 'QuoteFlow AI',
+    url: 'https://quoteflow-ai-jealabs.netlify.app',
+    description:
+      'Quotation tool that turns a plain-language customer request into a line-item quote, with a quote pipeline dashboard and print-ready PDF output.',
+    tags: ['React', 'TypeScript', 'Business software'],
+    image: quoteflowImg,
+    alt: 'QuoteFlow AI new-quote screen with the AI assistant turning a customer request into suggested services and line items, and a running quote total',
+  },
+  {
+    name: 'InvoiceFlow AI',
+    url: 'https://invoiceflow-ai.netlify.app',
+    description:
+      'Invoicing app for freelancers and small businesses with a revenue dashboard, payment tracking, print-ready PDF invoices, and AI-written line items and payment reminders.',
+    tags: ['JavaScript', 'Node.js', 'Invoicing'],
+    image: invoiceflowImg,
+    alt: 'InvoiceFlow AI dashboard with revenue, paid, pending and overdue totals, a monthly revenue chart and invoice status breakdown',
+  },
+  {
+    name: 'LeadFlow AI',
+    url: 'https://leadflow-ai-jealabs.netlify.app/demo/',
+    description:
+      'Lead capture assistant that collects contact details, tags each enquiry by intent and drafts follow-up email and SMS messages for a lead dashboard.',
+    tags: ['Astro', 'TypeScript', 'Lead capture', 'Automation'],
+    image: leadflowImg,
+    alt: 'LeadFlow AI lead dashboard with a lead detail panel showing an AI summary, contact details and buttons to generate a follow-up email or SMS',
+  },
+  {
+    name: 'ReviewFlow AI',
+    url: 'https://reviewflow-ai-jealabs.netlify.app',
+    description:
+      'Review management dashboard with rating trends, sentiment breakdown, drafted replies to customer reviews and review-request messages.',
+    tags: ['React', 'TypeScript', 'Reputation'],
+    image: reviewflowImg,
+    alt: 'ReviewFlow AI dashboard with average rating, review counts, a six-month rating trend chart and a sentiment breakdown',
   },
   {
     name: 'WebInABox',
@@ -89,31 +118,13 @@ export const projects = [
     alt: 'Demo seaside hotel website with an illustrated hero and a check-in, check-out and guests search bar',
   },
   {
-    name: 'LeadFlow AI',
-    url: 'https://leadflow-ai-jealabs.netlify.app/demo/',
-    description:
-      'Lead capture assistant that collects contact details, tags each enquiry by intent and drafts follow-up email and SMS messages for a lead dashboard.',
-    tags: ['Astro', 'TypeScript', 'Lead capture', 'Automation'],
-    image: leadflowImg,
-    alt: 'Demo dental clinic website with service prices and a chat assistant prompt for capturing enquiries',
-  },
-  {
-    name: 'InvoiceFlow AI',
-    url: 'https://invoiceflow-ai.netlify.app',
-    description:
-      'Invoicing app for freelancers and small businesses with a revenue dashboard, payment tracking, print-ready PDF invoices, and AI-written line items and payment reminders.',
-    tags: ['JavaScript', 'Node.js', 'Invoicing'],
-    image: invoiceflowImg,
-    alt: 'InvoiceFlow AI dashboard with revenue, paid and pending totals, a six-month revenue chart and recent invoices',
-  },
-  {
     name: 'FollowUp AI',
     url: 'https://followup-ai-jealabs.netlify.app',
     description:
       'Lead follow-up tracker with a pipeline dashboard, a daily list of who to contact, and AI-drafted email, SMS and call scripts for each lead.',
     tags: ['React', 'TypeScript', 'Sales', 'Automation'],
     image: followupImg,
-    alt: 'FollowUp AI dashboard showing follow-ups due today, open pipeline value and an AI-drafted follow-up email for a lead',
+    alt: 'FollowUp AI leads list with a lead drawer showing deal details and an AI-drafted follow-up email',
   },
 ];
 
@@ -134,7 +145,7 @@ export const experience = [
     date: '2025 — Present',
     points: [
       'Took VeriFact from capstone to a live product: Spring Boot and Spring AI backend, React frontend, Postgres, deployed on Cloudflare Pages and Render.',
-      'Built and shipped seven business products (quoting, invoicing, reviews, booking, hotel, lead capture and follow-ups) as live demos and digital products.',
+      'Built and shipped eight business products (customer support, quoting, invoicing, reviews, booking, hotel, lead capture and follow-ups) as live demos and digital products.',
     ],
   },
   {
