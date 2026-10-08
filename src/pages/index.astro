@@ -13,6 +13,8 @@ const nav = [
 ];
 const ext = { target: '_blank', rel: 'noopener noreferrer' };
 const year = new Date().getFullYear();
+const [firstName, ...rest] = person.name.split(' ');
+const restName = rest.join(' ');
 ---
 <!doctype html>
 <html lang="en" data-theme="dark">
@@ -21,7 +23,7 @@ const year = new Date().getFullYear();
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{seo.title}</title>
   <meta name="description" content={seo.description} />
-  <meta name="theme-color" content="#0F172A" />
+  <meta name="theme-color" content="#06060C" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   {Astro.site && <link rel="canonical" href={Astro.site.href} />}
   <meta property="og:type" content="website" />
@@ -36,12 +38,12 @@ const year = new Date().getFullYear();
   <meta name="twitter:image" content={ogImage} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
   <script is:inline>
     (function () {
       var d = document.documentElement;
       d.classList.add('js');
-      try { var t = localStorage.getItem('theme-v3'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+      try { var t = localStorage.getItem('theme-v6'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
     })();
   </script>
 </head>
@@ -53,7 +55,7 @@ const year = new Date().getFullYear();
       <a class="nav__brand" href="#top">{person.name}</a>
       <nav aria-label="Primary">
         <ul class="nav__links" id="nav-links">
-          {nav.map((n) => <li><a href={n.href}>{n.label}</a></li>)}
+          {nav.map((n) => <li><a href={n.href} class={n.href === '#contact' ? 'nav__cta' : undefined}>{n.label}</a></li>)}
         </ul>
       </nav>
       <div class="nav__actions">
@@ -69,10 +71,12 @@ const year = new Date().getFullYear();
   </header>
 
   <main id="main">
+    <div class="stage">
+    <div class="stage__fx" aria-hidden="true"><span class="beam"></span><span class="stars"></span></div>
     <!-- Hero -->
     <section class="hero wrap" aria-labelledby="hero-title">
       <p class="eyebrow">{person.role}</p>
-      <h1 id="hero-title">{person.name}</h1>
+      <h1 id="hero-title"><span class="grad">{firstName}</span> {restName}</h1>
       <p class="hero__lead">{person.tagline}</p>
       <div class="btn-row">
         <a class="btn btn--primary" href="#projects">View My Work</a>
@@ -86,7 +90,7 @@ const year = new Date().getFullYear();
     </section>
 
     <!-- Featured project -->
-    <section class="section wrap" id="projects" aria-labelledby="featured-title">
+    <section class="section section--featured wrap" id="projects" aria-labelledby="featured-title">
       <p class="label reveal">Featured Project</p>
       <article class="featured reveal">
         <a class="frame" href={featured.url} {...ext} aria-label={`Open the ${featured.name} live demo (opens in a new tab)`}>
@@ -114,6 +118,7 @@ const year = new Date().getFullYear();
         </div>
       </article>
     </section>
+    </div>
 
     <!-- Selected projects -->
     <section class="section wrap" aria-labelledby="selected-title">
@@ -237,12 +242,12 @@ const year = new Date().getFullYear();
     const syncTheme = () => {
       const dark = root.dataset.theme !== 'light';
       themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-      document.querySelector('meta[name="theme-color"]')!.setAttribute('content', dark ? '#0F172A' : '#F9F9F8');
+      document.querySelector('meta[name="theme-color"]')!.setAttribute('content', dark ? '#06060C' : '#F7F7FB');
     };
     syncTheme();
     themeBtn.addEventListener('click', () => {
       root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
-      try { localStorage.setItem('theme-v3', root.dataset.theme); } catch {}
+      try { localStorage.setItem('theme-v6', root.dataset.theme); } catch {}
       syncTheme();
     });
 
