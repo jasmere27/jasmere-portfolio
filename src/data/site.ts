@@ -27,11 +27,13 @@ export const seo = {
 
 export const links = {
   gumroad: 'https://jealabs.gumroad.com/',
+  payhip: 'https://payhip.com/JeaLabs',
   github: 'https://github.com/jasmere27',
   // Add your LinkedIn profile URL here to show it in the contact section.
   linkedin: '',
   youtube: 'https://www.youtube.com/@JeaAILabs',
   tiktok: 'https://www.tiktok.com/@aijealabs',
+  facebook: 'https://www.facebook.com/profile.php?id=61595052848380',
 };
 
 export const featured = {
