@@ -9,6 +9,9 @@ import leadflowImg from '../assets/thumbnails/leadflow.webp';
 import reviewflowImg from '../assets/thumbnails/reviewflow.webp';
 import webinaboxImg from '../assets/thumbnails/webinabox.webp';
 import followupImg from '../assets/thumbnails/followup.webp';
+import connectImg from '../assets/thumbnails/connect.webp';
+import gymflowImg from '../assets/thumbnails/gymflow.webp';
+import studioImg from '../assets/thumbnails/studio.webp';
 
 export const person = {
   name: 'Jasmere Paul Calagui',
@@ -56,6 +59,33 @@ export const featured = {
 };
 
 export const projects = [
+  {
+    name: 'Jea Labs Connect',
+    url: 'https://jea-labs-connect.netlify.app',
+    description:
+      'Customer conversation workspace with a shared inbox for Messenger, Instagram, WhatsApp and website chat, an opportunity queue, and quotes customers accept on their phone, tracked through to payment.',
+    tags: ['React', 'TypeScript', 'Hono', 'PostgreSQL', 'Claude API'],
+    image: connectImg,
+    alt: 'Jea Labs Connect demo inbox with a customer conversation and a sent quotation on desktop, beside the daily business briefing on a phone',
+  },
+  {
+    name: 'GymFlow',
+    url: 'https://gymflow-app-629.netlify.app',
+    description:
+      'Mobile-first strength-training app that plans each session, coaches every exercise with an animated demo, and sets "beat last time" targets from your logged sets. Works offline, with optional Supabase sync.',
+    tags: ['React', 'TypeScript', 'Supabase', 'PWA'],
+    image: gymflowImg,
+    alt: 'GymFlow workout in progress with sets to log on desktop, beside today\'s Full Body A plan on a phone',
+  },
+  {
+    name: 'Jea Labs Studio',
+    url: 'https://studio-jealabs.netlify.app',
+    description:
+      'In development: an AI software studio where a Master Agent plans an app as a task graph, specialist agents design, code and test it, and the generated app runs in a sandboxed live preview.',
+    tags: ['React', 'TypeScript', 'Node.js', 'Claude API', 'AI Agents'],
+    image: studioImg,
+    alt: 'Jea Labs Studio workspace with a generated fitness app in the live preview and the AI team panel, beside the studio on a phone',
+  },
   {
     name: 'SupportDesk AI',
     url: 'https://supportdesk-ai-app.netlify.app',
@@ -147,7 +177,8 @@ export const experience = [
     date: '2025 — Present',
     points: [
       'Took VeriFact from capstone to a live product: Spring Boot and Spring AI backend, React frontend, Postgres, deployed on Cloudflare Pages and Render.',
-      'Built and shipped eight business products (customer support, quoting, invoicing, reviews, booking, hotel, lead capture and follow-ups) as live demos and digital products.',
+      'Built and shipped nine business products (customer conversations, customer support, quoting, invoicing, reviews, booking, hotel, lead capture and follow-ups) as live demos and digital products, plus GymFlow, a strength-training app.',
+      'Building Jea Labs Studio, a multi-agent AI system that plans, codes and tests software in a live preview.',
     ],
   },
   {
