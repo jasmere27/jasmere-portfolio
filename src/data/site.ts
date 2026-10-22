@@ -31,6 +31,7 @@ export const seo = {
 export const links = {
   gumroad: 'https://jealabs.gumroad.com/',
   payhip: 'https://payhip.com/JeaLabs',
+  shopify: 'https://jealabs.myshopify.com/',
   github: 'https://github.com/jasmere27',
   // Add your LinkedIn profile URL here to show it in the contact section.
   linkedin: '',
@@ -157,6 +158,151 @@ export const projects = [
     tags: ['React', 'TypeScript', 'Sales', 'Automation'],
     image: followupImg,
     alt: 'FollowUp AI leads list with an AI-drafted follow-up email on desktop, beside the follow-up dashboard on a phone',
+  },
+];
+
+// Shop products. `shopify` is the product handle on the Shopify store, `payhip` the Payhip product code.
+// `price` follows the Gumroad listing (a trailing + means pay what you want from that amount).
+// Products without an image show a text cover on the shop page.
+export const shopCategories = ['Source Code', 'Templates', 'Guides & Kits'] as const;
+
+export const products: {
+  name: string;
+  category: (typeof shopCategories)[number];
+  description: string;
+  tags: string[];
+  shopify: string;
+  payhip: string;
+  price: string;
+  demo?: string;
+  image?: ImageMetadata;
+  alt?: string;
+}[] = [
+  {
+    name: 'VeriFact: AI Fact-Checking Platform',
+    category: 'Source Code',
+    description: 'Full source code of VeriFact: claim extraction, web evidence search, per-claim verdicts with sources, and text, link, image and audio input.',
+    tags: ['Spring Boot', 'Spring AI', 'React', 'PostgreSQL'],
+    shopify: 'verifact-ai-fact-checking-platform-full-source-code',
+    payhip: 'oy5rm',
+    price: '₱5,000',
+    demo: featured.url,
+    image: verifactImg,
+    alt: featured.alt,
+  },
+  {
+    name: 'SupportDesk AI: Helpdesk & Customer Support App',
+    category: 'Source Code',
+    description: 'Inbox, tickets, customers, knowledge base and analytics, with Claude drafting replies and summarizing and tagging tickets.',
+    tags: ['JavaScript', 'Node.js', 'Claude API'],
+    shopify: 'supportdesk-ai-ai-helpdesk-customer-support-app-source-code',
+    payhip: 'MO14o',
+    price: '₱1,500',
+    demo: 'https://supportdesk-ai-app.netlify.app',
+    image: supportdeskImg,
+    alt: 'SupportDesk AI inbox with an AI ticket summary on desktop, beside the helpdesk dashboard on a phone',
+  },
+  {
+    name: 'QuoteFlow AI: Quote & Proposal Generator',
+    category: 'Source Code',
+    description: 'Turns a plain-language customer request into a line-item quote, with a quote pipeline dashboard and print-ready PDFs.',
+    tags: ['React', 'TypeScript'],
+    shopify: 'quoteflow-ai-ai-quote-proposal-generator-react-typescript-source-code',
+    payhip: 'ngvd6',
+    price: '₱1,500',
+    demo: 'https://quoteflow-ai-jealabs.netlify.app',
+    image: quoteflowImg,
+    alt: 'QuoteFlow AI new-quote screen with the AI assistant drafting line items, beside the quote dashboard on a phone',
+  },
+  {
+    name: 'InvoiceFlow AI: Invoicing App for Freelancers',
+    category: 'Source Code',
+    description: 'Revenue dashboard, payment tracking, print-ready invoices and AI-written payment reminders. Plain HTML and JavaScript, no dependencies.',
+    tags: ['HTML', 'JavaScript'],
+    shopify: 'invoiceflow-ai-invoicing-app-source-code-for-freelancers-html-js-no-dependencies',
+    payhip: 'AzmJd',
+    price: '₱1,500',
+    demo: 'https://invoiceflow-ai.netlify.app',
+    image: invoiceflowImg,
+    alt: 'InvoiceFlow AI revenue dashboard with totals, a monthly chart and invoice status, on desktop and on a phone',
+  },
+  {
+    name: 'FollowUp AI: Lead Follow-Up Tracker',
+    category: 'Source Code',
+    description: 'Pipeline dashboard, a daily list of who to contact, and AI-drafted email, SMS and call scripts for each lead.',
+    tags: ['React', 'TypeScript'],
+    shopify: 'followup-ai-lead-follow-up-tracker-with-ai-message-drafts-react-source-code',
+    payhip: 'QMRrB',
+    price: '₱1,500',
+    demo: 'https://followup-ai-jealabs.netlify.app',
+    image: followupImg,
+    alt: 'FollowUp AI leads list with an AI-drafted follow-up email on desktop, beside the follow-up dashboard on a phone',
+  },
+  {
+    name: 'ReviewFlow AI: Review & Reputation SaaS Template',
+    category: 'Templates',
+    description: 'Rating trends, sentiment breakdown, drafted replies to reviews and review-request messages, ready to brand as your own.',
+    tags: ['React', 'TypeScript', 'SaaS'],
+    shopify: 'reviewflow-ai-ai-review-reputation-management-saas-template',
+    payhip: 'gdBbK',
+    price: '₱1,500+',
+    demo: 'https://reviewflow-ai-jealabs.netlify.app',
+    image: reviewflowImg,
+    alt: 'ReviewFlow AI dashboard with average rating, rating trend and sentiment breakdown, on desktop and on a phone',
+  },
+  {
+    name: 'AI Receptionist + Booking Website',
+    category: 'Templates',
+    description: 'Business website with a chat receptionist that answers from business data, a five-step booking flow and an admin dashboard.',
+    tags: ['Astro', 'TypeScript', 'Booking'],
+    shopify: 'ai-receptionist-booking-website-astro-template',
+    payhip: 'PeQw1',
+    price: '₱2,000',
+    demo: 'https://ai-receptionist-booking-demo.netlify.app/',
+    image: receptionistImg,
+    alt: 'AI Receptionist demo dental clinic site with the Luma AI chat offering open appointment times, beside the mobile site on a phone',
+  },
+  {
+    name: 'LeadFlow AI: Lead Capture Website Template',
+    category: 'Templates',
+    description: 'Small-business website with a lead capture assistant that tags each enquiry by intent and drafts follow-up messages.',
+    tags: ['Astro', 'TypeScript', 'Lead capture'],
+    shopify: 'leadflow-ai-ai-lead-capture-website-template-for-small-businesses',
+    payhip: 'L9QNf',
+    price: '₱1,500',
+    demo: 'https://leadflow-ai-jealabs.netlify.app/demo/',
+    image: leadflowImg,
+    alt: 'LeadFlow AI lead dashboard with an AI summary and follow-up buttons, beside the demo clinic site with its lead capture chat on a phone',
+  },
+  {
+    name: 'WebInABox: Hotel Website + Booking System',
+    category: 'Templates',
+    description: 'Hotel website with a booking flow covering availability, pricing, taxes and guest details, plus an admin dashboard.',
+    tags: ['Astro', 'TypeScript', 'Hospitality'],
+    shopify: 'webinabox-hotel-website-booking-system-template-astro',
+    payhip: 'Oq0Qz',
+    price: '₱1,000',
+    demo: 'https://webinabox-hotel-demo.netlify.app/',
+    image: webinaboxImg,
+    alt: 'WebInABox demo hotel booking page with dates, guests and room choices, beside the hotel homepage on a phone',
+  },
+  {
+    name: 'JEA LABS: AI Coding Agent Starter Kit',
+    category: 'Guides & Kits',
+    description: 'Reusable instruction files, eight specialist roles, seven workflows and copy-ready prompts for guiding AI coding assistants, with Claude Code and Codex CLI guides and a practice app.',
+    tags: ['AI Agents', 'Claude Code', 'Codex CLI'],
+    shopify: 'jea-labs-ai-coding-agent-starter-kit',
+    payhip: 'nSQlm',
+    price: '₱999',
+  },
+  {
+    name: 'From AI Beginner to App Builder',
+    category: 'Guides & Kits',
+    description: 'A 67-page handbook on AI, AI agents and coding with AI, with 20 practical prompts and a task-tracker app you build in four stages.',
+    tags: ['PDF Guide', 'AI', 'Beginners'],
+    shopify: 'from-ai-beginner-to-app-builder-understanding-ai-ai-agents-and-coding-with-ai',
+    payhip: '97pZn',
+    price: '₱499',
   },
 ];
 
