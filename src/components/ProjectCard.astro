@@ -1,0 +1,28 @@
+---
+import { Picture } from 'astro:assets';
+import type { Project } from '../data/site';
+
+interface Props { project: Project; class?: string }
+const { project: p, class: cls } = Astro.props;
+
+// Projects without a public URL (local-only apps) render as a plain card.
+const Wrap = p.url ? 'a' : 'div';
+const linkAttrs = p.url ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' } : {};
+---
+<li class:list={['card', cls]}>
+  <Wrap class="card__link" {...linkAttrs}>
+    <div class="card__img">
+      <Picture src={p.image} alt={p.alt} formats={['avif', 'webp']}
+        widths={[480, 720, 960]} sizes="(min-width: 1100px) 360px, (min-width: 700px) 50vw, 100vw" loading="lazy" />
+      {p.status && <span class="card__status">{p.status}</span>}
+    </div>
+    <div class="card__body">
+      <h3>{p.name}</h3>
+      <p>{p.description}</p>
+      <ul class="tags">{p.tags.map((t) => <li>{t}</li>)}</ul>
+      {p.url
+        ? <span class="card__cta">View Live Demo <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></span>
+        : <span class="card__cta card__cta--muted">Runs locally · no public demo yet</span>}
+    </div>
+  </Wrap>
+</li>

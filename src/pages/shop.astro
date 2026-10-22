@@ -1,6 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 import { person, links, products, shopCategories, projects } from '../data/site';
 
 const ext = { target: '_blank', rel: 'noopener noreferrer' };
@@ -10,7 +11,7 @@ const gumroadUrl = (permalink: string) => new URL(`l/${permalink}`, links.gumroa
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
 // Projects that aren't sold as products yet still get a spot below the shop.
-const forSale = new Set(products.map((p) => p.demo));
+const forSale = new Set(products.flatMap((p) => (p.demo ? [p.demo] : [])));
 const notForSale = projects.filter((p) => !forSale.has(p.url));
 ---
 <Base title={`Shop — ${person.name}`} description="Source code, website templates and AI guides by Jasmere Paul Calagui, available on Shopify and Payhip.">
@@ -80,25 +81,10 @@ const notForSale = projects.filter((p) => !forSale.has(p.url));
     <section class="section wrap" aria-labelledby="more-title">
       <div class="section__head">
         <h2 id="more-title">More projects</h2>
-        <p class="muted">Apps I've built that aren't for sale yet. Each one has a live demo you can try.</p>
+        <p class="muted">Apps I've built or am building that aren't for sale yet. Most have a live demo you can try.</p>
       </div>
       <ul class="grid">
-        {notForSale.map((p) => (
-          <li class="card">
-            <a class="card__link" href={p.url} {...ext}>
-              <div class="card__img">
-                <Picture src={p.image} alt={p.alt} formats={['avif', 'webp']}
-                  widths={[480, 720, 960]} sizes="(min-width: 1100px) 360px, (min-width: 700px) 50vw, 100vw" loading="lazy" />
-              </div>
-              <div class="card__body">
-                <h3>{p.name}</h3>
-                <p>{p.description}</p>
-                <ul class="tags">{p.tags.map((t) => <li>{t}</li>)}</ul>
-                <span class="card__cta">View Live Demo <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></span>
-              </div>
-            </a>
-          </li>
-        ))}
+        {notForSale.map((p) => <ProjectCard project={p} />)}
       </ul>
     </section>
   )}

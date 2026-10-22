@@ -1,6 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 import { person, seo, links, featured, projects, experience, skills, channels, about } from '../data/site';
 
 const ext = { target: '_blank', rel: 'noopener noreferrer' };
@@ -62,25 +63,10 @@ const restName = rest.join(' ');
   <section class="section wrap" aria-labelledby="selected-title">
     <div class="section__head reveal">
       <h2 id="selected-title">Selected Projects</h2>
-      <p class="muted">Business software, booking systems and lead tools, each with a live demo you can try.</p>
+      <p class="muted">Business software, AI tools and apps, most with a live demo you can try. Projects still being built are marked In development.</p>
     </div>
     <ul class="grid">
-      {projects.map((p) => (
-        <li class="card reveal">
-          <a class="card__link" href={p.url} {...ext}>
-            <div class="card__img">
-              <Picture src={p.image} alt={p.alt} formats={['avif', 'webp']}
-                widths={[480, 720, 960]} sizes="(min-width: 1100px) 360px, (min-width: 700px) 50vw, 100vw" loading="lazy" />
-            </div>
-            <div class="card__body">
-              <h3>{p.name}</h3>
-              <p>{p.description}</p>
-              <ul class="tags">{p.tags.map((t) => <li>{t}</li>)}</ul>
-              <span class="card__cta">View Live Demo <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></span>
-            </div>
-          </a>
-        </li>
-      ))}
+      {projects.map((p) => <ProjectCard project={p} class="reveal" />)}
       <li class="card card--cta reveal">
         <p class="label">Want the products?</p>
         <p>Most of these builds are for sale as source code and templates, alongside my AI guides and starter kits.</p>

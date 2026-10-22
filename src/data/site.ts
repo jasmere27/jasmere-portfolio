@@ -12,6 +12,12 @@ import followupImg from '../assets/thumbnails/followup.webp';
 import connectImg from '../assets/thumbnails/connect.webp';
 import gymflowImg from '../assets/thumbnails/gymflow.webp';
 import studioImg from '../assets/thumbnails/studio.webp';
+import stayflowImg from '../assets/thumbnails/stayflow.webp';
+import selloraImg from '../assets/thumbnails/sellora.webp';
+import unifiedInboxImg from '../assets/thumbnails/unified-inbox.webp';
+import meloImg from '../assets/thumbnails/melo.webp';
+import scoutImg from '../assets/thumbnails/scout.webp';
+import workmateImg from '../assets/thumbnails/workmate.webp';
 
 export const person = {
   name: 'Jasmere Paul Calagui',
@@ -59,7 +65,29 @@ export const featured = {
   alt: 'VeriFact homepage with an example report marking a claim as Contradicted with its sources, beside the VeriFact check page on a phone',
 };
 
-export const projects = [
+// `status` marks projects still being built; it shows as a badge on the card.
+// Projects without a `url` run locally only and show no demo link.
+export type Project = {
+  name: string;
+  url?: string;
+  status?: 'In development';
+  description: string;
+  tags: string[];
+  image: ImageMetadata;
+  alt: string;
+};
+
+export const projects: Project[] = [
+  {
+    name: 'StayFlow AI',
+    url: 'https://stayflow-ai-230.netlify.app',
+    status: 'In development',
+    description:
+      'Operations workspace for Philippine Airbnb hosts and staycation owners: reservations with database-level double-booking prevention, calendar, guests, payments and receipts, direct-booking pages, housekeeping tasks and AI reply drafts.',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Claude API'],
+    image: stayflowImg,
+    alt: 'StayFlow AI demo workspace availability calendar with bookings across four units, beside the host overview on a phone',
+  },
   {
     name: 'Jea Labs Connect',
     url: 'https://jea-labs-connect.netlify.app',
@@ -68,6 +96,34 @@ export const projects = [
     tags: ['React', 'TypeScript', 'Hono', 'PostgreSQL', 'Claude API'],
     image: connectImg,
     alt: 'Jea Labs Connect demo inbox with a customer conversation and a sent quotation on desktop, beside the daily business briefing on a phone',
+  },
+  {
+    name: 'Unified Inbox',
+    url: 'https://unified-inbox-1ce657.netlify.app',
+    description:
+      'One inbox for Facebook Messenger, Instagram DMs, WhatsApp Business and website chat, with unread and delivery status, team roles and encrypted provider tokens. Try it with sample data.',
+    tags: ['React', 'TypeScript', 'Hono', 'PostgreSQL', 'Meta APIs'],
+    image: unifiedInboxImg,
+    alt: 'Unified Inbox sample workspace with an Instagram conversation open on desktop, beside the all-inboxes list on a phone',
+  },
+  {
+    name: 'Sellora',
+    url: 'https://sellora-ph.netlify.app',
+    status: 'In development',
+    description:
+      'Marketplace where students buy and sell study notes, templates, design assets and tools, or book tutoring and services. Accounts and listings are built; checkout and payouts are next.',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'Drizzle'],
+    image: selloraImg,
+    alt: 'Sellora student marketplace homepage with search and categories, on desktop and on a phone',
+  },
+  {
+    name: 'Melo',
+    url: 'https://melo-music-6548.netlify.app',
+    description:
+      'Music player with AI playlists: describe a mood and Melo, a small animated companion, builds a playlist of real tracks from Audius and YouTube.',
+    tags: ['React', 'TypeScript', 'Express', 'Claude API'],
+    image: meloImg,
+    alt: 'Melo music player with the Make a playlist prompt and trending tracks, on desktop and on a phone',
   },
   {
     name: 'GymFlow',
@@ -81,11 +137,31 @@ export const projects = [
   {
     name: 'Jea Labs Studio',
     url: 'https://studio-jealabs.netlify.app',
+    status: 'In development',
     description:
-      'In development: an AI software studio where a Master Agent plans an app as a task graph, specialist agents design, code and test it, and the generated app runs in a sandboxed live preview.',
+      'AI software studio where a Master Agent plans an app as a task graph, specialist agents design, code and test it, and the generated app runs in a sandboxed live preview.',
     tags: ['React', 'TypeScript', 'Node.js', 'Claude API', 'AI Agents'],
     image: studioImg,
     alt: 'Jea Labs Studio workspace with a generated fitness app in the live preview and the AI team panel, beside the studio on a phone',
+  },
+  {
+    name: 'Jea Labs Scout',
+    status: 'In development',
+    description:
+      'Lead research tool that finds businesses that may need a website, verifies their web presence with evidence, scores them with transparent rules and drafts short offers that are only sent after approval.',
+    tags: ['Next.js', 'TypeScript', 'SQLite', 'Playwright', 'Claude API'],
+    image: scoutImg,
+    alt: 'Jea Labs Scout leads table with fictional demo businesses, website results and scores, beside the overview on a phone',
+  },
+  {
+    name: 'AI Workmate PH',
+    url: 'https://ai-workmate-ph.netlify.app',
+    status: 'In development',
+    description:
+      '120 ready-to-fill AI prompts in four packs for Filipino virtual assistants, online sellers, real estate agents and teachers, in English, Filipino or Taglish. Free preview available; checkout opens soon.',
+    tags: ['Digital product', 'Prompt engineering', 'PDF'],
+    image: workmateImg,
+    alt: 'AI Workmate PH landing page for the complete prompt bundle, on desktop and on a phone',
   },
   {
     name: 'SupportDesk AI',
@@ -336,8 +412,8 @@ export const experience = [
     date: '2025 — Present',
     points: [
       'Took VeriFact from capstone to a live product: Spring Boot and Spring AI backend, React frontend, Postgres, deployed on Cloudflare Pages and Render.',
-      'Built and shipped nine business products (customer conversations, customer support, quoting, invoicing, reviews, booking, hotel, lead capture and follow-ups) as live demos and digital products, plus GymFlow, a strength-training app.',
-      'Building Jea Labs Studio, a multi-agent AI system that plans, codes and tests software in a live preview.',
+      'Built and shipped ten business products (customer conversations, a unified inbox, customer support, quoting, invoicing, reviews, booking, hotel, lead capture and follow-ups) as live demos and digital products, plus GymFlow, a strength-training app, and Melo, an AI music player.',
+      'Building StayFlow AI (property operations for Airbnb hosts), Sellora (a student marketplace), Jea Labs Scout (lead research) and Jea Labs Studio, a multi-agent AI system that plans, codes and tests software in a live preview.',
     ],
   },
   {
