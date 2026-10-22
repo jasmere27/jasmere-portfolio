@@ -71,7 +71,7 @@ export const projects = [
   },
   {
     name: 'GymFlow',
-    url: 'https://gymflow-app-629.netlify.app',
+    url: 'https://gymflow-app-629.netlify.app/#/home',
     description:
       'Mobile-first strength-training app that plans each session, coaches every exercise with an animated demo, and sets "beat last time" targets from your logged sets. Works offline, with optional Supabase sync.',
     tags: ['React', 'TypeScript', 'Supabase', 'PWA'],
