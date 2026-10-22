@@ -161,7 +161,8 @@ export const projects = [
   },
 ];
 
-// Shop products. `shopify` is the product handle on the Shopify store, `payhip` the Payhip product code.
+// Shop products. `gumroad` is the Gumroad product permalink (Buy Now opens its checkout on the page),
+// `shopify` the product handle on the Shopify store and `payhip` the Payhip product code.
 // `price` follows the Gumroad listing (a trailing + means pay what you want from that amount).
 // Products without an image show a text cover on the shop page.
 export const shopCategories = ['Source Code', 'Templates', 'Guides & Kits'] as const;
@@ -171,6 +172,7 @@ export const products: {
   category: (typeof shopCategories)[number];
   description: string;
   tags: string[];
+  gumroad: string;
   shopify: string;
   payhip: string;
   price: string;
@@ -184,6 +186,7 @@ export const products: {
     description: 'Full source code of VeriFact: claim extraction, web evidence search, per-claim verdicts with sources, and text, link, image and audio input.',
     tags: ['Spring Boot', 'Spring AI', 'React', 'PostgreSQL'],
     shopify: 'verifact-ai-fact-checking-platform-full-source-code',
+    gumroad: 'ncdszm',
     payhip: 'oy5rm',
     price: '₱5,000',
     demo: featured.url,
@@ -196,6 +199,7 @@ export const products: {
     description: 'Inbox, tickets, customers, knowledge base and analytics, with Claude drafting replies and summarizing and tagging tickets.',
     tags: ['JavaScript', 'Node.js', 'Claude API'],
     shopify: 'supportdesk-ai-ai-helpdesk-customer-support-app-source-code',
+    gumroad: 'cdhlx',
     payhip: 'MO14o',
     price: '₱1,500',
     demo: 'https://supportdesk-ai-app.netlify.app',
@@ -208,6 +212,7 @@ export const products: {
     description: 'Turns a plain-language customer request into a line-item quote, with a quote pipeline dashboard and print-ready PDFs.',
     tags: ['React', 'TypeScript'],
     shopify: 'quoteflow-ai-ai-quote-proposal-generator-react-typescript-source-code',
+    gumroad: 'tglwdt',
     payhip: 'ngvd6',
     price: '₱1,500',
     demo: 'https://quoteflow-ai-jealabs.netlify.app',
@@ -220,6 +225,7 @@ export const products: {
     description: 'Revenue dashboard, payment tracking, print-ready invoices and AI-written payment reminders. Plain HTML and JavaScript, no dependencies.',
     tags: ['HTML', 'JavaScript'],
     shopify: 'invoiceflow-ai-invoicing-app-source-code-for-freelancers-html-js-no-dependencies',
+    gumroad: 'lzctgq',
     payhip: 'AzmJd',
     price: '₱1,500',
     demo: 'https://invoiceflow-ai.netlify.app',
@@ -232,6 +238,7 @@ export const products: {
     description: 'Pipeline dashboard, a daily list of who to contact, and AI-drafted email, SMS and call scripts for each lead.',
     tags: ['React', 'TypeScript'],
     shopify: 'followup-ai-lead-follow-up-tracker-with-ai-message-drafts-react-source-code',
+    gumroad: 'qnmosc',
     payhip: 'QMRrB',
     price: '₱1,500',
     demo: 'https://followup-ai-jealabs.netlify.app',
@@ -244,6 +251,7 @@ export const products: {
     description: 'Rating trends, sentiment breakdown, drafted replies to reviews and review-request messages, ready to brand as your own.',
     tags: ['React', 'TypeScript', 'SaaS'],
     shopify: 'reviewflow-ai-ai-review-reputation-management-saas-template',
+    gumroad: 'qlonpr',
     payhip: 'gdBbK',
     price: '₱1,500+',
     demo: 'https://reviewflow-ai-jealabs.netlify.app',
@@ -256,6 +264,7 @@ export const products: {
     description: 'Business website with a chat receptionist that answers from business data, a five-step booking flow and an admin dashboard.',
     tags: ['Astro', 'TypeScript', 'Booking'],
     shopify: 'ai-receptionist-booking-website-astro-template',
+    gumroad: 'nyzrj',
     payhip: 'PeQw1',
     price: '₱2,000',
     demo: 'https://ai-receptionist-booking-demo.netlify.app/',
@@ -268,6 +277,7 @@ export const products: {
     description: 'Small-business website with a lead capture assistant that tags each enquiry by intent and drafts follow-up messages.',
     tags: ['Astro', 'TypeScript', 'Lead capture'],
     shopify: 'leadflow-ai-ai-lead-capture-website-template-for-small-businesses',
+    gumroad: 'idiiwt',
     payhip: 'L9QNf',
     price: '₱1,500',
     demo: 'https://leadflow-ai-jealabs.netlify.app/demo/',
@@ -280,6 +290,7 @@ export const products: {
     description: 'Hotel website with a booking flow covering availability, pricing, taxes and guest details, plus an admin dashboard.',
     tags: ['Astro', 'TypeScript', 'Hospitality'],
     shopify: 'webinabox-hotel-website-booking-system-template-astro',
+    gumroad: 'nioic',
     payhip: 'Oq0Qz',
     price: '₱1,000',
     demo: 'https://webinabox-hotel-demo.netlify.app/',
@@ -292,6 +303,7 @@ export const products: {
     description: 'Reusable instruction files, eight specialist roles, seven workflows and copy-ready prompts for guiding AI coding assistants, with Claude Code and Codex CLI guides and a practice app.',
     tags: ['AI Agents', 'Claude Code', 'Codex CLI'],
     shopify: 'jea-labs-ai-coding-agent-starter-kit',
+    gumroad: 'starter',
     payhip: 'nSQlm',
     price: '₱999',
   },
@@ -301,6 +313,7 @@ export const products: {
     description: 'A 67-page handbook on AI, AI agents and coding with AI, with 20 practical prompts and a task-tracker app you build in four stages.',
     tags: ['PDF Guide', 'AI', 'Beginners'],
     shopify: 'from-ai-beginner-to-app-builder-understanding-ai-ai-agents-and-coding-with-ai',
+    gumroad: 'handbook',
     payhip: '97pZn',
     price: '₱499',
   },

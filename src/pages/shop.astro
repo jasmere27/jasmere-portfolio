@@ -6,6 +6,7 @@ import { person, links, products, shopCategories, projects } from '../data/site'
 const ext = { target: '_blank', rel: 'noopener noreferrer' };
 const shopifyUrl = (handle: string) => new URL(`products/${handle}`, links.shopify).href;
 const payhipUrl = (code: string) => `https://payhip.com/b/${code}`;
+const gumroadUrl = (permalink: string) => new URL(`l/${permalink}`, links.gumroad).href;
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
 // Projects that aren't sold as products yet still get a spot below the shop.
@@ -16,7 +17,7 @@ const notForSale = projects.filter((p) => !forSale.has(p.url));
   <section class="hero hero--shop wrap" aria-labelledby="shop-title">
     <p class="eyebrow">Jea Labs Shop</p>
     <h1 id="shop-title">Products you can <span class="grad">build on</span></h1>
-    <p class="hero__lead">Full source code, ready-to-brand website templates and AI guides from the apps I've built. Try a live demo, then buy securely on Shopify or Payhip.</p>
+    <p class="hero__lead">Full source code, ready-to-brand website templates and AI guides from the apps I've built. Try a live demo, then buy right here with secure checkout.</p>
   </section>
 
   <section class="section section--shop wrap" aria-labelledby="products-title">
@@ -52,10 +53,13 @@ const notForSale = projects.filter((p) => !forSale.has(p.url));
             <p>{p.description}</p>
             <ul class="tags">{p.tags.map((t) => <li>{t}</li>)}</ul>
             <p class="product__price">{p.price}</p>
-            <div class="product__buy">
-              <a class="btn btn--primary" href={shopifyUrl(p.shopify)} {...ext}>Buy on Shopify<span class="sr-only">: {p.name} (opens in a new tab)</span></a>
-              <a class="btn btn--ghost" href={payhipUrl(p.payhip)} {...ext}>Payhip<span class="sr-only">: {p.name} (opens in a new tab)</span></a>
-            </div>
+            <a class="btn btn--primary product__buy" href={gumroadUrl(p.gumroad)} {...ext}>Buy Now<span class="sr-only">: {p.name}</span></a>
+            <p class="product__alt">
+              Also on{' '}
+              <a href={shopifyUrl(p.shopify)} {...ext}>Shopify</a>{' · '}
+              <a href={gumroadUrl(p.gumroad)} {...ext} data-gumroad-ignore="true">Gumroad</a>{' · '}
+              <a href={payhipUrl(p.payhip)} {...ext}>Payhip</a>
+            </p>
             {p.demo && (
               <a class="text-link product__demo" href={p.demo} {...ext}>Try the live demo <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
             )}
@@ -110,6 +114,8 @@ const notForSale = projects.filter((p) => !forSale.has(p.url));
     </div>
   </section>
 
+  <!-- Gumroad overlay: turns the Buy Now links into an on-page checkout. -->
+  <script is:inline src="https://gumroad.com/js/gumroad.js"></script>
   <script>
     const group = document.querySelector<HTMLElement>('.filters')!;
     const buttons = [...group.querySelectorAll<HTMLButtonElement>('.filter')];
