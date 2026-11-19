@@ -81,7 +81,7 @@ const notForSale = projects.filter((p) => !forSale.has(p.url));
     <section class="section wrap" aria-labelledby="more-title">
       <div class="section__head">
         <h2 id="more-title">More projects</h2>
-        <p class="muted">Apps I've built or am building that aren't for sale yet. Most have a live demo you can try.</p>
+        <p class="muted">More apps, games and digital projects I've built or am building. Each card shows whether a public demo is available.</p>
       </div>
       <ul class="grid">
         {notForSale.map((p) => <ProjectCard project={p} />)}

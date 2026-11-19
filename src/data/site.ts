@@ -17,6 +17,29 @@ import selloraImg from '../assets/thumbnails/sellora.webp';
 import unifiedInboxImg from '../assets/thumbnails/unified-inbox.webp';
 import meloImg from '../assets/thumbnails/melo.webp';
 import scoutImg from '../assets/thumbnails/scout.webp';
+import codeleImg from '../assets/thumbnails/codele.webp';
+import bellyvelImg from '../assets/thumbnails/bellyvel.webp';
+import sidehuntImg from '../assets/thumbnails/sidehunt.webp';
+import axiomImg from '../assets/thumbnails/axiom.webp';
+import tfamImg from '../assets/thumbnails/tfam.webp';
+import codeforgeImg from '../assets/thumbnails/codeforge.webp';
+import gmcImg from '../assets/thumbnails/gmc.webp';
+import bellyvelLiteImg from '../assets/thumbnails/bellyvel-lite.webp';
+import clipforgeImg from '../assets/thumbnails/clipforge.webp';
+import affiliateImg from '../assets/thumbnails/affiliate.webp';
+import kidsbooksImg from '../assets/thumbnails/kidsbooks.webp';
+import digitalKitsImg from '../assets/thumbnails/digital-kits.webp';
+import codekinImg from '../assets/thumbnails/codekin.webp';
+import growthImg from '../assets/thumbnails/growth.webp';
+import contentImg from '../assets/thumbnails/content.webp';
+import portraitImg from '../assets/thumbnails/portrait.webp';
+import slidesImg from '../assets/thumbnails/slides.webp';
+import lastOnlineImg from '../assets/thumbnails/last-online.webp';
+import labsImg from '../assets/thumbnails/labs.webp';
+import educationImg from '../assets/thumbnails/education.webp';
+import parallelImg from '../assets/thumbnails/parallel.webp';
+import signbridgeImg from '../assets/thumbnails/signbridge.webp';
+import interviewCopilotImg from '../assets/thumbnails/interview-copilot.webp';
 import workmateImg from '../assets/thumbnails/workmate.webp';
 
 export const person = {
@@ -66,7 +89,7 @@ export const featured = {
 };
 
 // `status` marks projects still being built; it shows as a badge on the card.
-// Projects without a `url` run locally only and show no demo link.
+// Only verified public demos have a `url`; private and local projects show their availability.
 export type Project = {
   name: string;
   url?: string;
@@ -75,9 +98,212 @@ export type Project = {
   tags: string[];
   image: ImageMetadata;
   alt: string;
+  availability?: string;
+  demoLabel?: string;
 };
 
 export const projects: Project[] = [
+  {
+    name: 'Interview Copilot',
+    image: interviewCopilotImg,
+    alt: 'Interview Copilot browser workspace for interview practice and source-grounded coding answers',
+    url: 'https://bellyvel-interview-copilot.netlify.app',
+    status: 'In development',
+    description: 'Windows and browser workspace for interview practice and assessments that permit AI assistance, with English, Tagalog and Taglish transcription, source-grounded project answers, screen-code analysis, mock interviews and learning exercises. AI features require a configured provider.',
+    tags: ['Python', 'PySide6', 'Whisper', 'JavaScript', 'OpenAI API'],
+    demoLabel: 'View the web app',
+  },
+  {
+    name: 'SignBridge AI',
+    image: signbridgeImg,
+    alt: 'SignBridge AI web app with camera controls and manual session notes',
+    url: 'https://signbridge-ai-jas.netlify.app',
+    status: 'In development',
+    description: 'Android sign-language research prototype with landmark capture and a model-training workflow, plus an installable web app for camera preview, manual notes and text export. No trained ASL classifier is bundled; this release does not translate signs.',
+    tags: ['Kotlin', 'Jetpack Compose', 'MediaPipe', 'JavaScript', 'PWA'],
+    demoLabel: 'View the development app',
+  },
+  {
+    name: 'PARALLEL',
+    image: parallelImg,
+    alt: 'PARALLEL Android download page introducing its music-reactive camera and eight visual effects',
+    url: 'https://parallel-reality-a0b7c602.netlify.app',
+    status: 'In development',
+    description: 'Native offline Android camera with eight music-reactive visual effects, on-device microphone or consented device-audio analysis, and photo and video export. An installable debug APK is available; physical-device verification remains pending.',
+    tags: ['Kotlin', 'Jetpack Compose', 'CameraX', 'OpenGL ES', 'Android'],
+    demoLabel: 'View Android download page',
+  },
+  {
+    name: "T Fam Ice",
+    image: tfamImg,
+    alt: "T Fam Ice sales and stock interface framed on a blue project thumbnail",
+    description: "Mobile-first sales and inventory PWA for a family ice business, with a two-tap cashier, production and stock counts, a cash ledger, spreadsheet imports, reports and optional Google Sheets sync.",
+    tags: ["Next.js", "TypeScript", "Supabase", "PWA"],
+    availability: "Business workspace · sign-in required",
+  },
+  {
+    name: "CODELE",
+    image: codeleImg,
+    alt: 'CODELE dashboard showing the daily coding trio, JavaScript learning journey and locally saved progress',
+    url: "https://codele-learn.netlify.app",
+    description: "Offline coding puzzle game with a daily trio, seven arcade modes, a seven-day learning journey, XP, badges and a timed Interview Arena. Progress stays on the device without an account.",
+    tags: ["React", "TypeScript", "IndexedDB", "PWA"],
+  },
+  {
+    name: "CodeForge: Developer Quest",
+    image: codeforgeImg,
+    alt: "CodeForge JavaScript Forest game and coding workspace",
+    status: "In development",
+    description: "Coding RPG set in JavaScript Forest, combining a playable Phaser world with a Monaco editor, implementation quests, debugging bosses and real automated checks of player code.",
+    tags: ["React", "TypeScript", "Phaser", "Monaco", "IndexedDB"],
+  },
+  {
+    name: "GMC Scholars Hub",
+    image: gmcImg,
+    alt: "GMC Scholars Hub dashboard with aggregate course progress and grade review tools",
+    description: "Scholar administration dashboard with course equivalencies, grade submissions, document uploads, adviser review, completion tracking and retained submission history.",
+    tags: ["React", "TypeScript", "Netlify Functions", "PostgreSQL"],
+    availability: "Private workspace · authorized access only",
+  },
+  {
+    name: "BellyVel",
+    image: bellyvelImg,
+    alt: 'BellyVel reviewer demo showing the simulated fifteen-workout commitment and mobile navigation',
+    url: "https://bellyvel-commitment.netlify.app/?demo=1",
+    status: "In development",
+    description: "Fitness commitment app with guided workouts, readiness check-ins, progress and a companion. An isolated reviewer demo uses simulated workout stakes and rewards; Android and iOS projects share the web codebase.",
+    tags: ["React", "TypeScript", "Cloudflare D1", "Capacitor"],
+    demoLabel: "Try the simulated demo",
+  },
+  {
+    name: "BellyVel Lite",
+    image: bellyvelLiteImg,
+    alt: "BellyVel Lite landing page with fitness photography and its virtual commitment features",
+    url: "https://bellyvel-lite.netlify.app",
+    status: "In development",
+    description: "Separate fitness prototype pairing optional, consent-based AI goal illustrations with guided workout sessions and virtual commitments. Includes a signed Android build; all stakes and rewards are simulated.",
+    tags: ["React", "TypeScript", "IndexedDB", "Android"],
+    demoLabel: "View the prototype",
+  },
+  {
+    name: "SideHunt AI",
+    image: sidehuntImg,
+    alt: 'SideHunt AI landing page introducing job discovery, proposals and an application workspace',
+    url: "https://sidehunt-ai-jas.netlify.app",
+    description: "Freelancer workspace with live Himalayas job discovery, profile-based matching, proposal drafts, business lead imports and an application tracker in an account-isolated workspace.",
+    tags: ["Next.js", "TypeScript", "Netlify Functions", "Netlify Blobs"],
+  },
+  {
+    name: "Axiom — AI Trading Research",
+    image: axiomImg,
+    alt: 'Axiom trading research dashboard preview with backend connection status',
+    url: "https://axiom-ai-trader-jas.netlify.app",
+    status: "In development",
+    description: "Paper-trading research app with public Kraken data, technical charts, strategy backtesting and a persistent virtual account. The hosted frontend needs a connected backend for market data and trading research.",
+    tags: ["React", "TypeScript", "FastAPI", "SQLite"],
+    demoLabel: "View frontend preview",
+  },
+  {
+    name: "ClipForge AI",
+    image: clipforgeImg,
+    alt: "ClipForge AI video clipping workspace with its video-to-clips illustration",
+    status: "In development",
+    description: "Local video clipping studio using speech transcription, scene detection and FFmpeg to create editable vertical clips with captions, previews and final exports from uploaded video.",
+    tags: ["Next.js", "FastAPI", "Whisper", "FFmpeg", "Celery"],
+  },
+  {
+    name: "Jea Labs AI Affiliate",
+    image: affiliateImg,
+    alt: "Jea Labs AI Affiliate operations dashboard showing its research and content workflow",
+    status: "In development",
+    description: "Local affiliate operations workspace for product research, content preparation, approval and publishing workflows, with persistent records, optional local AI and FFmpeg video tools.",
+    tags: ["React", "TypeScript", "FastAPI", "SQLite", "Ollama"],
+  },
+  {
+    name: "Digital Kids Books",
+    image: kidsbooksImg,
+    alt: "Digital Kids Books catalog with original story, coloring and sticker artwork",
+    description: "A collection of 600 digital products: 200 story ebooks, 200 coloring books and 200 sticker packs, with editable artwork, printable downloads, listing drafts and a searchable offline catalog.",
+    tags: ["Python", "SVG", "PDF", "EPUB", "Digital products"],
+    availability: "Local collection · no public catalog yet",
+  },
+  {
+    name: "Jea Labs Digital Kits",
+    image: digitalKitsImg,
+    alt: "Online Seller Kit workbook preview from the Jea Labs Digital Kits collection",
+    status: 'In development',
+    description: 'Three downloadable productivity kits for online sellers, payday budgeting and virtual assistants, combining spreadsheet workbooks, editable documents, PDFs and quick-start guides. Native application compatibility checks remain pending.',
+    tags: ['Spreadsheets', 'DOCX', 'PDF', 'Digital products'],
+    availability: 'Local release candidate · no public listing yet',
+  },
+  {
+    name: "Codekin",
+    image: codekinImg,
+    alt: "Codekin interactive web demo with its illustrated AI teammate world",
+    url: "https://codekin-demo.netlify.app",
+    status: "In development",
+    description: "Desktop development workspace with a small game world for AI teammates. The web and mobile demo simulates tasks and team activity; real project access and coding belong to the local desktop app.",
+    tags: ["Godot", "Python", "FastAPI", "SQLite"],
+    demoLabel: "Try the simulated demo",
+  },
+  {
+    name: "BellyVel Growth Studio",
+    image: growthImg,
+    alt: "BellyVel Growth Studio interface preview with empty analytics and no business records",
+    status: "In development",
+    description: "Internal growth workspace for event tracking, attribution, funnel analytics, research CRM, a content workflow and a daily growth journal, calculated from stored events.",
+    tags: ["React", "TypeScript", "FastAPI", "SQLAlchemy", "SQLite"],
+    availability: "Internal tool · no public demo",
+  },
+  {
+    name: "Jea Labs Content Studio",
+    image: contentImg,
+    alt: "Jea Labs Content Studio overview in a fresh local workspace",
+    status: "In development",
+    description: "Local product marketing workspace that organizes product facts, content ideas, scripts, video preparation, captions, review and approval, with a worker and publication calendar.",
+    tags: ["Next.js", "TypeScript", "SQLite", "AI APIs", "Playwright"],
+  },
+  {
+    name: "Pet Portrait Studio",
+    image: portraitImg,
+    alt: "Finished dog portrait artwork presented as a Pet Portrait Studio project cover",
+    description: "Local Jira order workspace for a pet-portrait production workflow: inspect orders, hand off reference images for editing, compose names and backgrounds, review results and upload approved artwork.",
+    tags: ["React", "Node.js", "Sharp", "Jira API"],
+    availability: "Local studio · Jira access required",
+  },
+  {
+    name: "Church Slide Maker",
+    image: slidesImg,
+    alt: "Church Slide Maker editor with slides generated locally from the included sample sermon",
+    description: "Sermon slide editor that groups notes without rewriting them, supports slide and photo editing, stores drafts on the device and exports PowerPoint and PDF. Optional AI falls back to local generation.",
+    tags: ["React", "TypeScript", "IndexedDB", "PptxGenJS", "jsPDF"],
+    availability: "No verified public demo link",
+  },
+  {
+    name: "LAST ONLINE",
+    image: lastOnlineImg,
+    alt: "Original LAST ONLINE animated short cover artwork featuring a character with headphones",
+    status: "In development",
+    description: "Original animated short workflow with locally drawn 2D artwork, articulated movement, cinematic framing, an original soundtrack and dialogue captions. The current visual draft has character voices pending.",
+    tags: ["Python", "2D animation", "Video", "Original artwork"],
+    availability: "Local animation draft",
+  },
+  {
+    name: "Jea AI Labs Website",
+    image: labsImg,
+    alt: "Jea AI Labs brand website with its software projects and digital products",
+    description: "Brand website presenting practical AI software, websites and digital products, with dedicated privacy and terms pages.",
+    tags: ["HTML", "CSS", "Brand website"],
+    availability: "No verified public demo link",
+  },
+  {
+    name: "Assessment of Learning E-Portfolio",
+    image: educationImg,
+    alt: "Assessment of Learning education website with its assessment philosophy and artifact navigation",
+    description: "Education portfolio website presenting an assessment philosophy, learning artifacts, reflections and a final synthesis across linked pages.",
+    tags: ["HTML", "CSS", "JavaScript", "Education"],
+    availability: "No verified public demo link",
+  },
   {
     name: 'StayFlow AI',
     url: 'https://stayflow-ai-230.netlify.app',
